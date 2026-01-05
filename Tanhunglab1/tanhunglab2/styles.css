@@ -1,0 +1,34 @@
+/* Thiết lập khung chứa */
+section.banner-khung {
+    width: 100%;
+    height: 80px;           /* Chiều cao của khung */
+    background: #f2f2f2;    /* Màu nền khung xám nhạt */
+    position: relative;
+    overflow: hidden;       /* Quan trọng: Giúp chữ không bị tràn ra ngoài khung */
+    display: flex;
+    align-items: center;    /* Căn chữ giữa khung theo chiều dọc */
+    border: 2px solid #ddd; /* Thêm viền cho khung rõ ràng hơn */
+    margin-top: 50px;
+}
+
+/* Thiết lập chữ chuyển động */
+.lol {
+    color: #333;            /* Màu chữ đen xám */
+    font-size: 28px;        /* Kích thước chữ */
+    font-weight: bold;
+    position: absolute;
+    white-space: nowrap;    /* Giữ chữ trên 1 dòng */
+    
+    /* Gắn animation: tên - thời gian - kiểu chạy - lặp vô tận */
+    animation: moveText 8s linear infinite; 
+}
+
+/* Định nghĩa quy luật chuyển động */
+@keyframes moveText {
+    0% {
+        transform: translateX(100vw); /* Bắt đầu từ ngoài cùng bên phải màn hình */
+    }
+    100% {
+        transform: translateX(-100%); /* Chạy hết sang trái cho đến khi biến mất */
+    }
+}
